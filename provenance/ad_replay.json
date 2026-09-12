@@ -1,0 +1,14 @@
+{
+  "rdkit_version": "2025.09.5",
+  "n_reference": 34511,
+  "n_external": 1068,
+  "fingerprint": "achiral 2048-bit Morgan radius 2; binary fingerprint for AD",
+  "n_fields_checked": 56,
+  "all_saved_AD_fields_match": true,
+  "n_max_similarity_exactly_one": 641,
+  "max_absolute_numeric_differences": {
+    "max_similarity": 0.0,
+    "mean_top5_similarity": 0.0
+  },
+  "provenance": "New replay utility verified against saved AD output; not asserted to be the original AD source code."
+}

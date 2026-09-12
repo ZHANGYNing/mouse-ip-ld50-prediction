@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "Main source-holdout workflow; no model fitting or new prediction generation",
+  "n_raw_rows": 40579,
+  "n_rule_curated_compounds": 36027,
+  "n_development_before_oof": 34959,
+  "n_excluded_oof": 448,
+  "split_membership": {
+    "train_for_early_stopping": 31059,
+    "valid_for_early_stopping": 3452,
+    "external_test": 1068,
+    "excluded_oof": 448
+  },
+  "all_five_recovered_OOF_fold_metrics_match_original_summary": true,
+  "single_and_ensemble_external_metrics_match_original_summary": true,
+  "AD_predictions_match_original_ensemble_predictions": true,
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "limits": [
+    "Original internal holdout per-compound predictions are not included.",
+    "No original trained tree files or main-model preprocessing objects were supplied.",
+    "Exact original main-training dependency versions were not recorded in the supplied original summary."
+  ]
+}

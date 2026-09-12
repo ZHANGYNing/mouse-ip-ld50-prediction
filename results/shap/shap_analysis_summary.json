@@ -1,0 +1,218 @@
+{
+    "experiment": "SHAP analysis for no-leakage XGBoost model",
+    "model_file": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\no_leakage_pubchem_external_validation\\final_single_xgb_no_leakage.model",
+    "explain_set": "external_pubchem_only",
+    "n_train_full": 34511,
+    "n_explain_all": 1068,
+    "n_explain_used_for_shap": 1068,
+    "target": "-log10(LD50 mol/kg)",
+    "interpretation": {
+        "positive_shap": "increases predicted y, indicating lower LD50 and higher acute toxicity",
+        "negative_shap": "decreases predicted y, indicating higher LD50 and lower acute toxicity"
+    },
+    "metrics_on_explain_set": {
+        "R2": 0.7432363139668725,
+        "RMSE": 0.47096812873508886,
+        "MAE": 0.2428795127416977
+    },
+    "fold_error_on_explain_set": {
+        "median_fold_error": 1.188316009958211,
+        "mean_fold_error": 5.698838282234968,
+        "within_2_fold_percent": 78.37078651685393,
+        "within_5_fold_percent": 90.0749063670412,
+        "within_10_fold_percent": 94.19475655430712
+    },
+    "preprocess_info": {
+        "raw_dim": 2265,
+        "after_all_nan_filter_dim": 2265,
+        "after_variance_filter_dim": 2262
+    },
+    "model_num_features": 2262,
+    "shap_reconstruction_max_abs_diff": 3.0994415283203125e-05,
+    "top_10_all_features": [
+        {
+            "feature": "RDKit2D_PEOE_VSA1",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.049495480954647064,
+            "mean_shap": 0.021775435656309128,
+            "spearman_feature_value_vs_shap": 0.3794468642404155,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_SMR_VSA6",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.042611777782440186,
+            "mean_shap": -0.010230040177702904,
+            "spearman_feature_value_vs_shap": 0.7767970151805851,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_Chi2n",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.041509564965963364,
+            "mean_shap": 0.027753984555602074,
+            "spearman_feature_value_vs_shap": 0.7590799868132363,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_BCUT2D_MRLOW",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.03723650053143501,
+            "mean_shap": 0.0010935282334685326,
+            "spearman_feature_value_vs_shap": -0.00035897995052106333,
+            "interpretation_for_y": "Higher feature value tends to decrease predicted y, indicating lower toxicity / higher LD50"
+        },
+        {
+            "feature": "RDKit2D_MolLogP",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.034720636904239655,
+            "mean_shap": -0.018574433401226997,
+            "spearman_feature_value_vs_shap": 0.7637553523769947,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_NumAtomStereoCenters",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.03312249109148979,
+            "mean_shap": 0.027961529791355133,
+            "spearman_feature_value_vs_shap": 0.7539181673745321,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_Chi3n",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.03255002945661545,
+            "mean_shap": 0.02118339017033577,
+            "spearman_feature_value_vs_shap": 0.7980011113829818,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_Chi4n",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.028939131647348404,
+            "mean_shap": 0.014856977388262749,
+            "spearman_feature_value_vs_shap": 0.7012378064679744,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_BCUT2D_LOGPHI",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.028304502367973328,
+            "mean_shap": 0.017328673973679543,
+            "spearman_feature_value_vs_shap": 0.5914155977063171,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_NumAliphaticRings",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.0280773788690567,
+            "mean_shap": 0.020177491009235382,
+            "spearman_feature_value_vs_shap": 0.7111218278569101,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        }
+    ],
+    "top_10_rdkit2d_features": [
+        {
+            "feature": "RDKit2D_PEOE_VSA1",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.049495480954647064,
+            "mean_shap": 0.021775435656309128,
+            "spearman_feature_value_vs_shap": 0.3794468642404155,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_SMR_VSA6",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.042611777782440186,
+            "mean_shap": -0.010230040177702904,
+            "spearman_feature_value_vs_shap": 0.7767970151805851,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_Chi2n",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.041509564965963364,
+            "mean_shap": 0.027753984555602074,
+            "spearman_feature_value_vs_shap": 0.7590799868132363,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_BCUT2D_MRLOW",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.03723650053143501,
+            "mean_shap": 0.0010935282334685326,
+            "spearman_feature_value_vs_shap": -0.00035897995052106333,
+            "interpretation_for_y": "Higher feature value tends to decrease predicted y, indicating lower toxicity / higher LD50"
+        },
+        {
+            "feature": "RDKit2D_MolLogP",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.034720636904239655,
+            "mean_shap": -0.018574433401226997,
+            "spearman_feature_value_vs_shap": 0.7637553523769947,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_NumAtomStereoCenters",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.03312249109148979,
+            "mean_shap": 0.027961529791355133,
+            "spearman_feature_value_vs_shap": 0.7539181673745321,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_Chi3n",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.03255002945661545,
+            "mean_shap": 0.02118339017033577,
+            "spearman_feature_value_vs_shap": 0.7980011113829818,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_Chi4n",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.028939131647348404,
+            "mean_shap": 0.014856977388262749,
+            "spearman_feature_value_vs_shap": 0.7012378064679744,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_BCUT2D_LOGPHI",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.028304502367973328,
+            "mean_shap": 0.017328673973679543,
+            "spearman_feature_value_vs_shap": 0.5914155977063171,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        },
+        {
+            "feature": "RDKit2D_NumAliphaticRings",
+            "feature_type": "RDKit2D",
+            "mean_abs_shap": 0.0280773788690567,
+            "mean_shap": 0.020177491009235382,
+            "spearman_feature_value_vs_shap": 0.7111218278569101,
+            "interpretation_for_y": "Higher feature value tends to increase predicted y, indicating higher toxicity / lower LD50"
+        }
+    ],
+    "group_importance": [
+        {
+            "feature_group": "ECFP4_count",
+            "mean_abs_shap": 0.5277024507522583,
+            "relative_percent": 32.86191177368164
+        },
+        {
+            "feature_group": "RDKit2D",
+            "mean_abs_shap": 1.078115463256836,
+            "relative_percent": 67.1380844116211
+        }
+    ],
+    "output_files": {
+        "all_feature_importance": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\shap_analysis_no_leakage_xgboost\\shap_feature_importance_all_features.csv",
+        "rdkit2d_feature_importance": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\shap_analysis_no_leakage_xgboost\\shap_feature_importance_rdkit2d_only.csv",
+        "group_importance": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\shap_analysis_no_leakage_xgboost\\shap_group_importance_ecfp_vs_rdkit2d.csv",
+        "top_all_plot": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\shap_analysis_no_leakage_xgboost\\shap_top40_all_features.png",
+        "top_rdkit_plot": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\shap_analysis_no_leakage_xgboost\\shap_top30_rdkit2d_descriptors.png",
+        "group_plot": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\shap_analysis_no_leakage_xgboost\\shap_group_importance_ecfp_vs_rdkit2d.png",
+        "dependence_plot_dir": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\shap_analysis_no_leakage_xgboost\\dependence_plots_rdkit2d",
+        "local_explanation_dir": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\shap_analysis_no_leakage_xgboost\\local_explanations"
+    }
+}

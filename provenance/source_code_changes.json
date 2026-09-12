@@ -1,0 +1,20 @@
+{
+  "original_function_checks": [
+    {
+      "script": "train_and_evaluate.py",
+      "all_existing_functions_unchanged": true,
+      "functions_checked": 21,
+      "original_uploaded_sha256": "c3d74e91097a933ccc760fec3cd76b5e0e357357844708e25f2514ed290baa15",
+      "packaged_sha256": "9d6cc8d67c69cb405176b06d39f1c40a9ad4a5ce62909354c5cf2971ecc7d29c"
+    },
+    {
+      "script": "shap_analysis.py",
+      "all_existing_functions_unchanged": true,
+      "functions_checked": 13,
+      "original_uploaded_sha256": "1a76f1793b1ce6ff88715c428fa65152812812552fbc184402fb5a7d71df7bf7",
+      "packaged_sha256": "7c250433d8f6869b94d36a0957471cc22cd33f0a4a250c672af9cf6ebe40ba8c"
+    }
+  ],
+  "scope": "Original main study only: curation, source separation, OOF screening, XGBoost single and ensemble models, applicability domain and SHAP.",
+  "new_utilities": "Metric recomputation, fixed-file validation, rule replay and AD replay are packaging additions. No model retraining or invented predictions."
+}

@@ -1,0 +1,42 @@
+{
+  "scope": "Repository assembly verification; no model retraining",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.0",
+    "rdkit": "2025.9.5",
+    "xgboost-cpu": "3.2.0",
+    "joblib": "1.5.3",
+    "tqdm": "4.67.1",
+    "openpyxl": "3.1.5",
+    "matplotlib": "3.10.8"
+  },
+  "syntax_checked": [
+    "src/shap_analysis.py",
+    "src/train_and_evaluate.py",
+    "tools/capture_training_environment.py",
+    "tools/export_fixed_data.py",
+    "tools/recompute_results.py",
+    "tools/replay_applicability_domain.py",
+    "tools/replay_rule_curation.py",
+    "tools/verify_file_integrity.py"
+  ],
+  "historical_SHAP_top10_match_at_original_float32_precision": true,
+  "historical_SHAP_feature_count": 2262,
+  "checks_completed": [
+    "Frozen OOF exclusions and all five fold metrics",
+    "Frozen external single/ensemble metrics",
+    "Rule curation: all 36,027 identities, doses, molecular weights, sources, raw links",
+    "AD replay: all 56 fields for all 1,068 external compounds",
+    "Main and SHAP CLI help imports",
+    "Original main and SHAP function bodies unchanged"
+  ],
+  "not_performed": [
+    "Full model training",
+    "SHAP computation from original model weights"
+  ],
+  "historical_main_training_versions_recovered": false
+}

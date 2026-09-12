@@ -1,0 +1,19 @@
+{
+  "operation": "Replayed original rule_clean_and_aggregate without any model fitting",
+  "rdkit_version": "2025.09.5",
+  "original_input_sha256": "703eab875838ef9a2f8ae891461efcdbd9a60e40c8b7c5e5387bd5a78076e1f7",
+  "n_raw": 40579,
+  "n_retained_compounds": 36027,
+  "n_excluded_raw_records": 1198,
+  "n_excluded_aggregated_compounds": 49,
+  "all_retained_identities_sources_and_raw_record_links_match": true,
+  "maximum_absolute_numeric_differences": {
+    "ld50_mgkg": 0.0,
+    "molecular_weight": 0.0,
+    "y": 8.881784197001252e-16,
+    "ld50_min_mgkg_raw": 0.0,
+    "ld50_max_mgkg_raw": 0.0,
+    "ld50_median_mgkg_raw": 0.0
+  },
+  "exclusion_provenance": "Regenerated from the supplied raw input and original curation function; not an archived historical exclusion CSV."
+}

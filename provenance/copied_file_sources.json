@@ -1,0 +1,80 @@
+[
+  {
+    "repository_path": "data/raw/mouse_intraperitoneal_ld50.xlsx",
+    "source_filename": "mouse_intraperitoneal_LD50(2).xlsx",
+    "sha256": "703eab875838ef9a2f8ae891461efcdbd9a60e40c8b7c5e5387bd5a78076e1f7",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "data/oof/train_pool_oof_residual_report.csv",
+    "source_filename": "train_pool_oof_residual_report (2).csv",
+    "sha256": "4f8a17db9245be633b4b22b51e2eedd6a55f2ae62dccda5ec00483fa9123c4b3",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "data/exclusions/removed_oof_448.csv",
+    "source_filename": "removed_by_oof_train_pool_only(1).csv",
+    "sha256": "ec5dd76fd7b08a41917ee653f8004c59c78702288fff873035a046c9465833e8",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "predictions/source_holdout/external_single.csv",
+    "source_filename": "external_pubchem_only_predictions_single_no_leakage.csv",
+    "sha256": "6b4f5a5bfc0ffafba45053cf07ce1c876282a0f930c82cc75076b98a894a9cc6",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "predictions/source_holdout/external_bagging.csv",
+    "source_filename": "external_pubchem_only_predictions_bagging_no_leakage.csv",
+    "sha256": "b95e15fc4e598d4bea740a8338fdd856206d393d11eec929c618f77d3decc76b",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "predictions/source_holdout/external_with_ad.csv",
+    "source_filename": "pubchem_only_predictions_with_ad_achiral(1).csv",
+    "sha256": "75ed4ffa281831da834204cccedd88e25a994fd144cd324317cdeeb3a571f453",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "results/source_holdout/original_run_summary.json",
+    "source_filename": "no_leakage_pubchem_external_validation_summary(2).json",
+    "sha256": "5bbbc137e4893e053abf0a7e13606847fae3577c538a983bfbbda7306fe7492a",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "results/applicability_domain/pubchem_only_ad_grid_summary_achiral.csv",
+    "source_filename": "pubchem_only_ad_grid_summary_achiral.csv",
+    "sha256": "40e35e8723f7ef2911a11dc7229e102e31b3b1d9ab91e493cfac352a4d9a24bb",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "results/applicability_domain/pubchem_only_ad_key_thresholds_achiral.csv",
+    "source_filename": "pubchem_only_ad_key_thresholds_achiral.csv",
+    "sha256": "8639bc71d0bd2bc203348672486bd11353a4a26b4ea2b158d4ac0b51a55ed461",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "results/shap/shap_feature_importance_all_features.csv",
+    "source_filename": "shap_feature_importance_all_features.csv",
+    "sha256": "2a5a9e956a49cf2cbd728e20171689b3f3143f71396036b333b3a2169d2832fe",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "results/shap/shap_feature_importance_rdkit2d_only.csv",
+    "source_filename": "shap_feature_importance_rdkit2d_only.csv",
+    "sha256": "d56bb835c2168b3fc4278f215a22f6ce4b0656cd5f54a925234841be3c7d39ec",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "results/shap/shap_group_importance_ecfp_vs_rdkit2d.csv",
+    "source_filename": "shap_group_importance_ecfp_vs_rdkit2d.csv",
+    "sha256": "75679671e51d140b0bdf29ab538ed5ef47962c6f9d27bfde471b03fe81d25dbf",
+    "operation": "byte-identical copy"
+  },
+  {
+    "repository_path": "results/shap/shap_analysis_summary.json",
+    "source_filename": "shap_analysis_summary.json",
+    "sha256": "856ab8811393077ffa387e455e0080b38bf9109cfffb4ee3244f02f4b668bca1",
+    "operation": "byte-identical copy"
+  }
+]

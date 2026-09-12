@@ -1,0 +1,4 @@
+# Versions used for saved-prediction verification during repository assembly.
+# These are not asserted to be the historical model-training environment.
+numpy==2.3.5
+pandas==2.2.3

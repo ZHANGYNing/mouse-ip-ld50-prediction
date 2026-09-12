@@ -1,0 +1,12 @@
+{
+  "EXPLAIN_SET": "external_pubchem_only",
+  "MAX_EXPLAIN_SAMPLES": 2000,
+  "RANDOM_SEED": 42,
+  "TOP_N_ALL_FEATURES": 40,
+  "TOP_N_RDKIT_FEATURES": 30,
+  "TOP_N_DEPENDENCE": 8,
+  "TOP_N_LOCAL_FEATURES": 15,
+  "ECFP_RADIUS": 2,
+  "ECFP_BITS": 2048,
+  "model_explained": "original single XGBoost model; not the ten-model ensemble"
+}

@@ -1,0 +1,289 @@
+{
+    "experiment": "strict no-leakage source external validation",
+    "input_file": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50.xlsx",
+    "important_design": {
+        "step_1": "Start from pre-cleaning raw mixed data.",
+        "step_2": "Rule-clean and aggregate compounds.",
+        "step_3": "Hold out PubChem_only as external set before any OOF high-residual filtering.",
+        "step_4": "Apply OOF high-residual filtering only to TOXRIC_only + mixed training pool.",
+        "step_5": "PubChem_only external set receives rule-based cleaning only and no OOF residual filtering.",
+        "step_6": "Fit preprocessing only on training data; external set is never used for fitting imputer or variance selector."
+    },
+    "rule_cleaning": {
+        "n_raw_rows": 40579,
+        "n_rule_cleaned_aggregated_all": 36027,
+        "source_type_counts_after_rule_cleaning": {
+            "TOXRIC_only": 31944,
+            "mixed": 3015,
+            "PubChem_only": 1068
+        },
+        "n_removed_raw_by_rule": 1198,
+        "n_removed_aggregated_by_rule": 49
+    },
+    "source_split_before_oof": {
+        "n_train_pool_toxric_mixed_before_oof": 34959,
+        "n_external_pubchem_only_rule_cleaned_no_oof": 1068,
+        "train_pool_source_counts": {
+            "TOXRIC_only": 31944,
+            "mixed": 3015
+        }
+    },
+    "oof_filter_train_pool_only": {
+        "oof_metrics_on_train_pool_before_filter": {
+            "R2": 0.6541696786880493,
+            "RMSE": 0.39191964185711403,
+            "MAE": 0.2630552649497986
+        },
+        "n_train_pool_before_oof": 34959,
+        "n_removed_by_oof": 448,
+        "n_train_pool_after_oof": 34511,
+        "high_residual_threshold_fold": 20.0,
+        "fold_records": [
+            {
+                "fold": 1,
+                "best_iteration": 6983,
+                "valid_R2": 0.6438322067260742,
+                "valid_RMSE": 0.39924718826440864,
+                "valid_MAE": 0.26567208766937256,
+                "feature_dim": 2262
+            },
+            {
+                "fold": 2,
+                "best_iteration": 6836,
+                "valid_R2": 0.6696905493736267,
+                "valid_RMSE": 0.3861732295817287,
+                "valid_MAE": 0.25873860716819763,
+                "feature_dim": 2262
+            },
+            {
+                "fold": 3,
+                "best_iteration": 6956,
+                "valid_R2": 0.6495237350463867,
+                "valid_RMSE": 0.38568636333351863,
+                "valid_MAE": 0.2599879503250122,
+                "feature_dim": 2262
+            },
+            {
+                "fold": 4,
+                "best_iteration": 7000,
+                "valid_R2": 0.6645547151565552,
+                "valid_RMSE": 0.3899838908548719,
+                "valid_MAE": 0.2632382810115814,
+                "feature_dim": 2262
+            },
+            {
+                "fold": 5,
+                "best_iteration": 6966,
+                "valid_R2": 0.6423457860946655,
+                "valid_RMSE": 0.3982915798088325,
+                "valid_MAE": 0.2676401138305664,
+                "feature_dim": 2262
+            }
+        ]
+    },
+    "final_modeling_data": {
+        "n_train": 31059,
+        "n_valid": 3452,
+        "n_train_full": 34511,
+        "n_external_pubchem_only": 1068,
+        "train_source_counts": {
+            "TOXRIC_only": 28410,
+            "mixed": 2649
+        },
+        "valid_source_counts": {
+            "TOXRIC_only": 3151,
+            "mixed": 301
+        }
+    },
+    "feature": "ECFP4 count fingerprint + RDKit 2D descriptors",
+    "feature_preprocess_internal_valid": {
+        "raw_dim": 2265,
+        "after_all_nan_filter_dim": 2265,
+        "after_variance_filter_dim": 2262
+    },
+    "feature_preprocess_final_train_full": {
+        "raw_dim": 2265,
+        "after_all_nan_filter_dim": 2265,
+        "after_variance_filter_dim": 2262
+    },
+    "xgboost_params": {
+        "objective": "reg:squarederror",
+        "eval_metric": "rmse",
+        "tree_method": "hist",
+        "max_depth": 9,
+        "eta": 0.02,
+        "subsample": 0.75,
+        "colsample_bytree": 0.85,
+        "min_child_weight": 2,
+        "gamma": 0.01,
+        "lambda": 0.5,
+        "alpha": 0,
+        "max_bin": 256,
+        "seed": 42,
+        "device": "cuda"
+    },
+    "best_iteration_from_internal_valid": 7000,
+    "internal_valid": {
+        "metrics": {
+            "R2": 0.718624472618103,
+            "RMSE": 0.333690022819315,
+            "MAE": 0.23595063388347626
+        },
+        "fold_error": {
+            "median_fold_error": 1.4399763274249566,
+            "mean_fold_error": 2.1216238986597755,
+            "within_2_fold_percent": 72.62456546929317,
+            "within_5_fold_percent": 94.11935110081112,
+            "within_10_fold_percent": 98.4936268829664
+        }
+    },
+    "external_pubchem_only_single_model_no_leakage": {
+        "metrics": {
+            "R2": 0.7432370781898499,
+            "RMSE": 0.4709674362205804,
+            "MAE": 0.24287837743759155
+        },
+        "fold_error": {
+            "median_fold_error": 1.1883302255296986,
+            "mean_fold_error": 5.698857123769148,
+            "within_2_fold_percent": 78.37078651685393,
+            "within_5_fold_percent": 90.0749063670412,
+            "within_10_fold_percent": 94.19475655430712
+        }
+    },
+    "external_pubchem_only_bagging_no_leakage": {
+        "metrics": {
+            "R2": 0.7440083622932434,
+            "RMSE": 0.47025954052901975,
+            "MAE": 0.24453987181186676
+        },
+        "fold_error": {
+            "median_fold_error": 1.203569906331418,
+            "mean_fold_error": 5.6010361994632465,
+            "within_2_fold_percent": 78.18352059925093,
+            "within_5_fold_percent": 89.7940074906367,
+            "within_10_fold_percent": 94.3820224719101
+        }
+    },
+    "single_seed_records": [
+        {
+            "seed": 1,
+            "R2": 0.7414194345474243,
+            "RMSE": 0.47263150110946706,
+            "MAE": 0.24569113552570343,
+            "median_fold_error": 1.205905150595218,
+            "mean_fold_error": 5.577933775781333,
+            "within_2_fold_percent": 77.52808988764045,
+            "within_5_fold_percent": 89.51310861423221,
+            "within_10_fold_percent": 94.3820224719101
+        },
+        {
+            "seed": 2,
+            "R2": 0.7404825687408447,
+            "RMSE": 0.47348691915290503,
+            "MAE": 0.2437501847743988,
+            "median_fold_error": 1.1880847686652913,
+            "mean_fold_error": 5.830536046311184,
+            "within_2_fold_percent": 78.18352059925093,
+            "within_5_fold_percent": 89.60674157303372,
+            "within_10_fold_percent": 94.3820224719101
+        },
+        {
+            "seed": 3,
+            "R2": 0.7449038028717041,
+            "RMSE": 0.4694363179136733,
+            "MAE": 0.2462485432624817,
+            "median_fold_error": 1.2046747649694207,
+            "mean_fold_error": 5.655570716812194,
+            "within_2_fold_percent": 77.52808988764045,
+            "within_5_fold_percent": 90.0749063670412,
+            "within_10_fold_percent": 94.19475655430712
+        },
+        {
+            "seed": 4,
+            "R2": 0.7448251843452454,
+            "RMSE": 0.46950866974980354,
+            "MAE": 0.2442147433757782,
+            "median_fold_error": 1.1922239348842052,
+            "mean_fold_error": 5.563149015102154,
+            "within_2_fold_percent": 77.24719101123596,
+            "within_5_fold_percent": 90.2621722846442,
+            "within_10_fold_percent": 94.10112359550563
+        },
+        {
+            "seed": 5,
+            "R2": 0.7404119968414307,
+            "RMSE": 0.4735512889427645,
+            "MAE": 0.2521233856678009,
+            "median_fold_error": 1.2384979090483896,
+            "mean_fold_error": 5.537482889436635,
+            "within_2_fold_percent": 78.46441947565543,
+            "within_5_fold_percent": 89.70037453183521,
+            "within_10_fold_percent": 94.3820224719101
+        },
+        {
+            "seed": 42,
+            "R2": 0.7432370781898499,
+            "RMSE": 0.4709674362205804,
+            "MAE": 0.24287837743759155,
+            "median_fold_error": 1.1883302255296986,
+            "mean_fold_error": 5.698857123769148,
+            "within_2_fold_percent": 78.37078651685393,
+            "within_5_fold_percent": 90.0749063670412,
+            "within_10_fold_percent": 94.19475655430712
+        },
+        {
+            "seed": 123,
+            "R2": 0.7426350116729736,
+            "RMSE": 0.4715192691813722,
+            "MAE": 0.24841365218162537,
+            "median_fold_error": 1.2223542273416195,
+            "mean_fold_error": 5.573322975934487,
+            "within_2_fold_percent": 77.24719101123596,
+            "within_5_fold_percent": 90.1685393258427,
+            "within_10_fold_percent": 94.47565543071161
+        },
+        {
+            "seed": 2024,
+            "R2": 0.741053581237793,
+            "RMSE": 0.4729657696622791,
+            "MAE": 0.2509584426879883,
+            "median_fold_error": 1.226272982192737,
+            "mean_fold_error": 5.676439088823837,
+            "within_2_fold_percent": 77.62172284644194,
+            "within_5_fold_percent": 89.70037453183521,
+            "within_10_fold_percent": 94.28838951310861
+        },
+        {
+            "seed": 2025,
+            "R2": 0.7407852411270142,
+            "RMSE": 0.47321074251817485,
+            "MAE": 0.2419784516096115,
+            "median_fold_error": 1.176283937127371,
+            "mean_fold_error": 6.033167444832635,
+            "within_2_fold_percent": 77.99625468164794,
+            "within_5_fold_percent": 90.0749063670412,
+            "within_10_fold_percent": 94.10112359550563
+        },
+        {
+            "seed": 3407,
+            "R2": 0.7445878982543945,
+            "RMSE": 0.46972695903800993,
+            "MAE": 0.24265681207180023,
+            "median_fold_error": 1.1865976206394113,
+            "mean_fold_error": 5.450233918644041,
+            "within_2_fold_percent": 78.08988764044943,
+            "within_5_fold_percent": 89.7940074906367,
+            "within_10_fold_percent": 94.28838951310861
+        }
+    ],
+    "output_files": {
+        "rule_cleaned_aggregated_all": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\no_leakage_pubchem_external_validation\\rule_cleaned_aggregated_all.csv",
+        "external_pubchem_only_rule_cleaned_no_oof": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\no_leakage_pubchem_external_validation\\external_pubchem_only_rule_cleaned_no_oof.csv",
+        "train_pool_oof_residual_report": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\no_leakage_pubchem_external_validation\\train_pool_oof_residual_report.csv",
+        "removed_by_oof_train_pool_only": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\no_leakage_pubchem_external_validation\\removed_by_oof_train_pool_only.csv",
+        "external_predictions_single": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\no_leakage_pubchem_external_validation\\external_pubchem_only_predictions_single_no_leakage.csv",
+        "external_predictions_bagging": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\no_leakage_pubchem_external_validation\\external_pubchem_only_predictions_bagging_no_leakage.csv",
+        "seed_results": "C:\\Users\\Admin\\Desktop\\新建文件夹 (2)\\LD50mouse\\mouse_intraperitoneal_LD50_strict_cleaned\\no_leakage_pubchem_external_validation\\external_pubchem_only_single_seed_results_no_leakage.csv"
+    }
+}

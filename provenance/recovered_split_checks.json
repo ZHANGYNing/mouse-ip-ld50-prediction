@@ -1,0 +1,9 @@
+{
+  "source_holdout_membership": "Read from original source fields and frozen prediction rows.",
+  "original_internal_and_oof": "Deterministic reconstruction from original script, frozen row order, and seed 42; not claimed to be archived original split files.",
+  "n_train": 31059,
+  "n_valid": 3452,
+  "n_final_fit": 34511,
+  "OOF_folds": 5,
+  "split_seed": 42
+}
