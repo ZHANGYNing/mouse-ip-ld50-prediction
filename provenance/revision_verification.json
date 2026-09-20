@@ -1,0 +1,29 @@
+{
+  "subgroups": {
+    "n": 1068,
+    "mutually_exclusive_groups": [
+      641,
+      92,
+      335
+    ],
+    "fixed_predictions_match": true
+  },
+  "random_nested": {
+    "arms": 4,
+    "predictions_per_arm": 34959,
+    "outer_folds": 5,
+    "inner_splits_checked": 25,
+    "archived_prediction_metrics_match": true
+  },
+  "threshold": {
+    "arms": 5,
+    "fold_summary_rows": 25,
+    "summary_arithmetic_checked": true,
+    "per_compound_evaluation_predictions_available": false,
+    "split_export": "Reconstructed from code, seed 42 and frozen ordered screening report"
+  },
+  "scaffold": {
+    "supplied": "Code and reported summary table",
+    "per_compound_recomputation": false
+  }
+}

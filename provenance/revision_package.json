@@ -1,0 +1,267 @@
+{
+  "scope": "Available supplementary revision records, portable configs, and saved-result checks",
+  "source_records": [
+    {
+      "destination": "revision/threshold/05_development_pool_cv.py",
+      "original_filename": "05_development_pool_cv.py",
+      "original_sha256": "6ab51d151e356254f58ab6623887a0300f703e8d15b6eef15a8ca8788f18b22f",
+      "supplied_sha256": "6ab51d151e356254f58ab6623887a0300f703e8d15b6eef15a8ca8788f18b22f",
+      "role": "Supplied threshold comparison code; numerical implementation unchanged"
+    },
+    {
+      "destination": "revision/threshold/devpool_cv_core.py",
+      "original_filename": "devpool_cv_core.py",
+      "original_sha256": "44bb0eee18219d70069751ee061aa65d6abaa2313fa530853f6f476155561af1",
+      "supplied_sha256": "44bb0eee18219d70069751ee061aa65d6abaa2313fa530853f6f476155561af1",
+      "role": "Supplied threshold comparison code; numerical implementation unchanged"
+    },
+    {
+      "destination": "configs/threshold_cv.json",
+      "original_filename": "devpool_cv_config.json",
+      "original_sha256": "4797a523125a4d0cdcb0e44141baf4c207995f465d9e5ef648cfa03f4543fa44",
+      "supplied_sha256": "8a46e88955b208e0d077c4ea877f82c927d6ddbb2b0bd624c713f8af4ce7a1d7",
+      "role": "Portable configuration",
+      "changed_fields": [
+        "input_report",
+        "output_folder"
+      ]
+    },
+    {
+      "destination": "revision/random_nested/02_nested_oof_ablation.py",
+      "original_filename": "02_nested_oof_ablation.py",
+      "original_sha256": "fb0ce3cab6050cfd2de33dbe194a3f0bcf48828dafa293989ea68f88e939837a",
+      "supplied_sha256": "fb0ce3cab6050cfd2de33dbe194a3f0bcf48828dafa293989ea68f88e939837a",
+      "role": "Original random nested code; checked against archived run-manifest hashes"
+    },
+    {
+      "destination": "revision/random_nested/revision_common.py",
+      "original_filename": "revision_common.py",
+      "original_sha256": "8a67dbcecc59c43ab038bd530c718335c9cf7a2334a9ba6aa420a6203707a28a",
+      "supplied_sha256": "8a67dbcecc59c43ab038bd530c718335c9cf7a2334a9ba6aa420a6203707a28a",
+      "role": "Original random nested code; checked against archived run-manifest hashes"
+    },
+    {
+      "destination": "configs/rdkit2d_descriptor_names.json",
+      "original_filename": "rdkit2d_descriptor_names.json",
+      "original_sha256": "77fbf17b35d7b282612a0cf389939996a501aaee86936070d350a77cdaf35c6e",
+      "supplied_sha256": "77fbf17b35d7b282612a0cf389939996a501aaee86936070d350a77cdaf35c6e",
+      "role": "Reference descriptor names supplied with nested code"
+    },
+    {
+      "destination": "configs/random_nested.json",
+      "original_filename": "revision_config.json",
+      "original_sha256": "8d7c3ac5088ae196e87316ebdae72d4414ae60f9f7074287f56d762e9e5b889e",
+      "supplied_sha256": "a77f55ee87195a94e4ea92ab47aea46afcb9ed339a657f1e0d8938751d96561e",
+      "role": "Portable configuration",
+      "changed_fields": [
+        "input_csv",
+        "historical_summary_json",
+        "output_directory",
+        "representation_note"
+      ]
+    },
+    {
+      "destination": "revision/scaffold_nested/06_scaffold_nested_cv_fixed.py",
+      "original_filename": "06_scaffold_nested_cv_fixed.py",
+      "original_sha256": "c78d7b6428274ea81a81ff8f9809800129dad0d4b2b7216c646e029e800885a1",
+      "supplied_sha256": "c78d7b6428274ea81a81ff8f9809800129dad0d4b2b7216c646e029e800885a1",
+      "role": "Supplied scaffold implementation with nonfinite-feature handling; historical run-manifest unavailable"
+    },
+    {
+      "destination": "results/revision/threshold/development_cv_comparison.csv",
+      "original_filename": "development_cv_comparison.csv",
+      "original_sha256": "85d9cac1731f38896ca4ee9cd050860b500cc9e568711d664ceade19f424d5a9",
+      "supplied_sha256": "85d9cac1731f38896ca4ee9cd050860b500cc9e568711d664ceade19f424d5a9",
+      "role": "Reported Table S7 results"
+    },
+    {
+      "destination": "results/revision/threshold/development_cv_fold_results.csv",
+      "original_filename": "development_cv_fold_results.csv",
+      "original_sha256": "6e44bc46f0b6b88d81e710004b6db8cdb1a163930fe4d6fdee756d154102b9d0",
+      "supplied_sha256": "6e44bc46f0b6b88d81e710004b6db8cdb1a163930fe4d6fdee756d154102b9d0",
+      "role": "Reported Table S7 results"
+    },
+    {
+      "destination": "results/revision/random_nested/random_nested_cv_comparison.csv",
+      "original_filename": "random_nested_cv_comparison.csv",
+      "original_sha256": "8efdf5e6048a73122ce351716529f90008f0a06eea7899a34d9909261c7893a1",
+      "supplied_sha256": "8efdf5e6048a73122ce351716529f90008f0a06eea7899a34d9909261c7893a1",
+      "role": "Reported Table S8 results"
+    },
+    {
+      "destination": "results/revision/scaffold_nested/scaffold_nested_cv_comparison.csv",
+      "original_filename": "scaffold_nested_cv_comparison.csv",
+      "original_sha256": "d9d8234729cb0c0735977b6e77870049b5f4caf01a3b226d8f7f04e12e7cabd6",
+      "supplied_sha256": "d9d8234729cb0c0735977b6e77870049b5f4caf01a3b226d8f7f04e12e7cabd6",
+      "role": "Reported Table S9 results"
+    },
+    {
+      "destination": "results/revision/frozen_prediction_decomposition.txt",
+      "original_filename": "frozen_prediction_decomposition.txt",
+      "original_sha256": "c9679df1453dc52d18e17a466fa3f9e4795344acc61a33f954398d6dd03900c4",
+      "supplied_sha256": "c9679df1453dc52d18e17a466fa3f9e4795344acc61a33f954398d6dd03900c4",
+      "role": "Previously supplied Table S10 decomposition"
+    },
+    {
+      "destination": "results/revision/random_nested/outer_fold_metrics.csv",
+      "original_filename": "outer_fold_metrics.csv",
+      "original_sha256": "fe941936827f204fcf38fe114baedcf367bb397558930fac9269d2e48ff62b56",
+      "supplied_sha256": "fe941936827f204fcf38fe114baedcf367bb397558930fac9269d2e48ff62b56",
+      "role": "Unchanged archived random nested result"
+    },
+    {
+      "destination": "results/revision/random_nested/individual_seed_metrics.csv",
+      "original_filename": "individual_seed_metrics.csv",
+      "original_sha256": "6e81d218f0a022e3e6c56dad9bb536899bc6fb2d99346fd8a99f638a76bc1513",
+      "supplied_sha256": "6e81d218f0a022e3e6c56dad9bb536899bc6fb2d99346fd8a99f638a76bc1513",
+      "role": "Unchanged archived random nested result"
+    },
+    {
+      "destination": "results/revision/random_nested/paired_fold_changes_vs_no_filter.csv",
+      "original_filename": "paired_fold_changes_vs_no_filter.csv",
+      "original_sha256": "a7f2ea008493d4f7f4ef8f42bb43d37dc9ac1de28c0357f7ba11702e6bd0bf8b",
+      "supplied_sha256": "a7f2ea008493d4f7f4ef8f42bb43d37dc9ac1de28c0357f7ba11702e6bd0bf8b",
+      "role": "Unchanged archived random nested result"
+    },
+    {
+      "destination": "results/revision/random_nested/ensemble_definition.json",
+      "original_filename": "ensemble_definition.json",
+      "original_sha256": "c418bba2f3955ea45986ebc466ecc9331d0d9c08e1611d393804ac8c12b230dc",
+      "supplied_sha256": "c418bba2f3955ea45986ebc466ecc9331d0d9c08e1611d393804ac8c12b230dc",
+      "role": "Unchanged archived random nested result"
+    },
+    {
+      "destination": "results/revision/random_nested/run_manifest.json",
+      "original_filename": "run_manifest.json",
+      "original_sha256": "16c4203a4cad51872f1dda1ae43f42b6ea69989458a026f5280458ebb97420ec",
+      "supplied_sha256": "16c4203a4cad51872f1dda1ae43f42b6ea69989458a026f5280458ebb97420ec",
+      "role": "Unchanged archived random nested metadata"
+    },
+    {
+      "destination": "results/revision/random_nested/descriptor_names_used.json",
+      "original_filename": "descriptor_names_used.json",
+      "original_sha256": "5dbbd7b82852275547c18fdab70ea4a9c2747026389ddbb21445997c7f0972eb",
+      "supplied_sha256": "5dbbd7b82852275547c18fdab70ea4a9c2747026389ddbb21445997c7f0972eb",
+      "role": "Unchanged archived random nested metadata"
+    },
+    {
+      "destination": "results/revision/random_nested/descriptor_catalog_used.json",
+      "original_filename": "descriptor_catalog_used.json",
+      "original_sha256": "2d71178a7e46f7802e79b4c8931021ac6bbd0129fff60e855e2a64122530b7e4",
+      "supplied_sha256": "2d71178a7e46f7802e79b4c8931021ac6bbd0129fff60e855e2a64122530b7e4",
+      "role": "Unchanged archived random nested metadata"
+    },
+    {
+      "destination": "splits/revision/random_nested/outer_folds.csv",
+      "original_filename": "fixed_outer_splits.csv",
+      "original_sha256": "d03e6d53b8e5795143dacd3e2e003a164f3c5ecb6a2705093a7dfa901ffac9d1",
+      "supplied_sha256": "d03e6d53b8e5795143dacd3e2e003a164f3c5ecb6a2705093a7dfa901ffac9d1",
+      "role": "Original random outer fold assignments"
+    },
+    {
+      "destination": "data/revision/random_nested/outer_fold_01_screening.csv",
+      "original_filename": "training_only_screening.csv",
+      "original_sha256": "46423e48d964b110c2cc2d462149ae9d5d63faf6a6cede8c407ea541b7a00060",
+      "supplied_sha256": "46423e48d964b110c2cc2d462149ae9d5d63faf6a6cede8c407ea541b7a00060",
+      "role": "Original training-only screening records for this random outer fold"
+    },
+    {
+      "destination": "results/revision/random_nested/common_round_counts/outer_fold_01.json",
+      "original_filename": "common_round_count.json",
+      "original_sha256": "610fa9964824d192cc367c4d356a90c7103e46a5379e7b9fcb8a701f5a92c9cf",
+      "supplied_sha256": "610fa9964824d192cc367c4d356a90c7103e46a5379e7b9fcb8a701f5a92c9cf",
+      "role": "Original round counts shared by all arms within this random outer fold"
+    },
+    {
+      "destination": "data/revision/random_nested/outer_fold_02_screening.csv",
+      "original_filename": "training_only_screening.csv",
+      "original_sha256": "2b8d72cda75599e34dba286c115b5fa9608e697489ebc830125450a9596c295e",
+      "supplied_sha256": "2b8d72cda75599e34dba286c115b5fa9608e697489ebc830125450a9596c295e",
+      "role": "Original training-only screening records for this random outer fold"
+    },
+    {
+      "destination": "results/revision/random_nested/common_round_counts/outer_fold_02.json",
+      "original_filename": "common_round_count.json",
+      "original_sha256": "443abb293e19da63bc7e2e161c2b93cebf70480e5c630c19b271b610952601fd",
+      "supplied_sha256": "443abb293e19da63bc7e2e161c2b93cebf70480e5c630c19b271b610952601fd",
+      "role": "Original round counts shared by all arms within this random outer fold"
+    },
+    {
+      "destination": "data/revision/random_nested/outer_fold_03_screening.csv",
+      "original_filename": "training_only_screening.csv",
+      "original_sha256": "924abd148bf1218bd0e946c5b3951b7dfc5ad10055b29aef85df723bdfee0b29",
+      "supplied_sha256": "924abd148bf1218bd0e946c5b3951b7dfc5ad10055b29aef85df723bdfee0b29",
+      "role": "Original training-only screening records for this random outer fold"
+    },
+    {
+      "destination": "results/revision/random_nested/common_round_counts/outer_fold_03.json",
+      "original_filename": "common_round_count.json",
+      "original_sha256": "2377d24e1d26736d992c3bc57fb1c0dfdb5a6ce59d9f47cce4908a4ec7c93293",
+      "supplied_sha256": "2377d24e1d26736d992c3bc57fb1c0dfdb5a6ce59d9f47cce4908a4ec7c93293",
+      "role": "Original round counts shared by all arms within this random outer fold"
+    },
+    {
+      "destination": "data/revision/random_nested/outer_fold_04_screening.csv",
+      "original_filename": "training_only_screening.csv",
+      "original_sha256": "7140d1f99f36100fb2d2676934a714ddcf30b731e541b5f21385c90db7d86b0b",
+      "supplied_sha256": "7140d1f99f36100fb2d2676934a714ddcf30b731e541b5f21385c90db7d86b0b",
+      "role": "Original training-only screening records for this random outer fold"
+    },
+    {
+      "destination": "results/revision/random_nested/common_round_counts/outer_fold_04.json",
+      "original_filename": "common_round_count.json",
+      "original_sha256": "65b2beff9162d45280807187162f041c0fd6bed7a7c97b8a97bb7b4ba67c5ecb",
+      "supplied_sha256": "65b2beff9162d45280807187162f041c0fd6bed7a7c97b8a97bb7b4ba67c5ecb",
+      "role": "Original round counts shared by all arms within this random outer fold"
+    },
+    {
+      "destination": "data/revision/random_nested/outer_fold_05_screening.csv",
+      "original_filename": "training_only_screening.csv",
+      "original_sha256": "e2841416f382304f555f76545fc27622e60bd9f39f1de5d32ef02c5f0934dd90",
+      "supplied_sha256": "e2841416f382304f555f76545fc27622e60bd9f39f1de5d32ef02c5f0934dd90",
+      "role": "Original training-only screening records for this random outer fold"
+    },
+    {
+      "destination": "results/revision/random_nested/common_round_counts/outer_fold_05.json",
+      "original_filename": "common_round_count.json",
+      "original_sha256": "0aca4459f3e08f7f108a617a89e952bbdde4d73575733027a7ca7ced2a2a9b5e",
+      "supplied_sha256": "0aca4459f3e08f7f108a617a89e952bbdde4d73575733027a7ca7ced2a2a9b5e",
+      "role": "Original round counts shared by all arms within this random outer fold"
+    },
+    {
+      "destination": "tools/recompute_revision_results.py",
+      "original_filename": "recompute_revision_results.py",
+      "original_sha256": "93d5dbfc0d76f71be89e86f8ca4f6df806543d5cda6d56e106a683117fed617e",
+      "supplied_sha256": "93d5dbfc0d76f71be89e86f8ca4f6df806543d5cda6d56e106a683117fed617e",
+      "role": "New saved-result recalculation and consistency checks; no fitting"
+    }
+  ],
+  "random_code_and_input_hashes_match_original_run": true,
+  "prediction_partition": {
+    "source_filename": "outer_test_predictions.csv",
+    "source_sha256": "dbe8a769dba14bc8a11baf00f0c17292b87c65feb5fc9b3ad4e43ed0cd8ea1a0",
+    "procedure": "CSV rows partitioned by arm; numeric strings preserved",
+    "rows": {
+      "no_filter": 34959,
+      "filter_10fold": 34959,
+      "filter_20fold": 34959,
+      "filter_30fold": 34959
+    }
+  },
+  "index_consolidation": "Original NumPy row-index arrays consolidated into five NPZ files; every array equality checked",
+  "model_training_performed": false,
+  "provenance_audit_641_included": false,
+  "source_verification_448_location": "Manuscript Supplementary Information and Supplementary Data",
+  "derived_exports": {
+    "subgroup_rows": "Original saved ensemble predictions joined with saved AD fields and existing compound IDs",
+    "subgroup_metrics": "Recalculated from the same original fixed predictions",
+    "threshold_assignments": "Reconstructed from the frozen screening report and original KFold design; checked against sklearn KFold",
+    "threshold_assignments_are_recovered_historical_files": false
+  },
+  "checks": {
+    "main_code_parameters_requirements_byte_identical": true,
+    "supplementary_python_syntax_checked": true,
+    "portable_config_inputs_exist": true,
+    "training_executed": false
+  }
+}
