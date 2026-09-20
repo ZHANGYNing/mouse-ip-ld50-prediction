@@ -1,12 +1,12 @@
 # Mouse intraperitoneal LD50 prediction
 
-Code, compound-level data, fixed assignments, exclusion records and saved predictions for the main source-holdout workflow in **Data quality-aware machine learning for reliable prediction of mouse intraperitoneal acute toxicity**.
+Code, compound-level data, fixed assignments, exclusion records and saved predictions for the main workflow and available revision analyses in **Data quality-aware machine learning for predicting mouse intraperitoneal acute toxicity**.
 
 Repository: <https://github.com/ZHANGYNing/mouse-ip-ld50-prediction>
 
 The workflow integrates TOXRIC and PubChem records, applies rule-based curation, reserves PubChem-only compounds before residual screening, screens the development pool with five-fold out-of-fold (OOF) predictions, and trains single-seed and ten-seed XGBoost models. Features are log1p-transformed ECFP4 count fingerprints and RDKit 2D descriptors. Applicability-domain (AD) analysis and TreeSHAP support interpretation of the saved predictions.
 
-This package covers the original main workflow. Random/scaffold nested validation and threshold-sensitivity experiments are separate supplementary analyses and are not included here. Detailed database verification and structural annotations for the 448 high-residual compounds belong in the manuscript's Supplementary Information; the computational exclusion list is included here.
+This package contains the original main workflow and the available materials for the revision analyses in Tables S7–S10. The revision analyses are documented in [docs/revision_analyses.md](docs/revision_analyses.md), including the distinction between archived predictions and reported summaries. Detailed database verification and structural annotations for the 448 high-residual compounds are provided in the manuscript's Supplementary Information and Supplementary Data; the computational exclusion list is included here.
 
 ## Data and target
 
@@ -28,7 +28,7 @@ LD50_mgkg = 1000 * molecular_weight * 10**(-y)
 fold_error = 10**abs(y_true - y_pred)
 ```
 
-OOF exclusion is `fold_error >= 20`, and five is the number of CV folds. PubChem-only compounds are not screened by OOF residuals. Source separation does not imply scaffold independence. A high model residual does not establish an erroneous experimental value.
+OOF exclusion is `fold_error >= 20`, and five is the number of CV folds. PubChem-only compounds are not screened by OOF residuals. PubChem-only denotes membership in the assembled input sources. Structural support and upstream provenance overlap are considered separately when interpreting this source-holdout evaluation. A high model residual does not establish an erroneous experimental value.
 
 ## Contents
 
@@ -46,6 +46,8 @@ OOF exclusion is `fold_error >= 20`, and five is the number of CV folds. PubChem
 | `configs/` | Complete main-model and curation parameter snapshot |
 | `predictions/source_holdout/` | Original per-compound single/ensemble predictions and saved AD fields |
 | `results/` | Original run summary, AD/SHAP source tables and independently recomputed metrics |
+| `revision/` | Supplied threshold, random nested and scaffold nested analysis code |
+| `results/revision/`, `predictions/revision/`, `splits/revision/` | Supplementary results and available individual predictions/assignments |
 | `provenance/` | Input/code hashes, transformation records and verification scope |
 | `docs/` | Protocol, data dictionary and the mapping from reproducibility requirements to files |
 
@@ -115,6 +117,16 @@ This explains `final_single_xgb_no_leakage.model`. The archived SHAP analysis ex
 Saved OOF and external predictions can be verified without an ML runtime. The original curation was replayed successfully, all retained identities/source links were checked, and all saved AD fields were reproduced. Main-model training functions were compared with the uploaded originals and are unchanged.
 
 Full XGBoost training and TreeSHAP inference were not rerun while assembling this repository. The requirements specify a reference installation, not a recovered historical main-training environment. Curation/AD were checked with RDKit 2025.09.5; XGBoost import/command checks used the CPU build. Exact historical main-training dependency versions, original trained tree files/preprocessing objects and original internal-holdout per-compound predictions have not yet been archived in this package. See `docs/availability.md` for precise coverage. Saved predictions are authoritative for the reported numerical results; a retraining run should record its actual environment and may not be bit-identical across versions or devices.
+
+## 5. Inspect and recompute the revision results
+
+```bash
+python tools/recompute_revision_results.py
+```
+
+This uses saved records without model fitting. It checks the 1,068-compound subgroup results, the four random nested arms (34,959 predictions each), and the arithmetic linking the threshold fold summaries to Table S7. The subgroup counts are 641 fingerprint-identical compounds, 92 with 0.70 ≤ Smax < 1.0, and 335 with Smax < 0.70; the latter two groups form the 427-compound fingerprint-nonidentical subset. The script also exports threshold fold assignments reconstructed from the supplied code, seed and original row order. The scaffold summary is supplied as a reported result; its original individual predictions are not present in this archive.
+
+The three supplementary protocols and their commands are in [docs/revision_analyses.md](docs/revision_analyses.md). Their results describe different evaluation settings. OOF residuals identify model–data disagreement. The threshold comparison describes separately retained cohorts; the nested comparisons assess training-only screening on common outer test folds. Full supplementary model training was not rerun when preparing this update.
 
 ## Sources and citation
 

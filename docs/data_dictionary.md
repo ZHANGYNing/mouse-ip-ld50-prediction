@@ -30,3 +30,14 @@ The original workbook has three columns: `Canonical SMILES`, `Toxicity Value` (m
 `splits/source_holdout_and_internal.csv` records role, order within the original train/validation partitions and order in the final train+validation fit. `splits/original_oof.csv` records which of the five original screening folds predicted each development compound. These assignments were recovered deterministically from the original code and frozen row order, with numerical cross-checks documented in `provenance/`.
 
 The rule-based exclusion tables are replayed outputs. The 448-record OOF exclusion CSV and the complete OOF residual report are unchanged supplied files. Detailed source verification of those 448 compounds is in SI and is not a computational exclusion rule.
+
+
+## Revision exports
+
+- `predictions/revision/pubchem_similarity_groups.csv`: original target, original ensemble prediction, saved `max_similarity`, existing `compound_id`, three mutually exclusive `similarity_group` labels, plus `fingerprint_nonidentical` and `in_domain_at_0p70` flags. These are evaluation annotations, not model features.
+- `predictions/revision/random_nested/*.csv`: unchanged numeric strings from the archived combined outer-prediction CSV, partitioned by `arm`. `row_id` indexes the original 34,959-row development report (zero based); `sample_id` is the historical nested-run identifier. Join to other datasets using canonical SMILES or the explicit development row index, rather than assuming different identifier conventions coincide.
+- `splits/revision/random_nested/outer_folds.csv`: original random outer test-fold membership. All four arms share these folds.
+- `splits/revision/random_nested/outer_fold_XX_inner_indices.npz`: original row-index arrays consolidated without alteration. Keys `inner_YY_pilot_train`, `inner_YY_pilot_valid`, `inner_YY_oof_train`, `inner_YY_oof_prediction` record inner fitting/prediction roles. `<arm>_train` and `<arm>_prediction` record the final fitting and outer testing rows.
+- `data/revision/random_nested/outer_fold_XX_screening.csv`: original inner-OOF predictions, residuals and threshold flags for that outer training partition.
+- `splits/revision/threshold_cv_assignments_reconstructed.csv`: `arm`, `development_row_id`, and `evaluation_fold`, reconstructed from the frozen screening report and KFold(5, shuffle=True, random_state=42). Excluded compounds are absent from the relevant arm. These were not recovered from the historical training directory.
+- `results/revision/`: copied reported summaries and explicitly identified recalculated subgroup tables. Pooled R² is calculated from pooled prediction errors and targets; it is not the average of subgroup/fold R².
