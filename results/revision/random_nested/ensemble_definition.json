@@ -1,0 +1,9 @@
+{
+  "seeds": [
+    42
+  ],
+  "n_models_per_arm": 1,
+  "aggregation": "arithmetic mean of y predictions; then back-transform dose",
+  "single_seed_result": true,
+  "threshold_selection": "none; all arms reported"
+}

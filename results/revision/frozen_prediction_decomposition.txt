@@ -1,0 +1,34 @@
+JHM HAZMAT-D-26-15050: frozen-prediction subgroup audit
+
+Post hoc decomposition of existing frozen prediction file. No model retraining; uses stored achiral similarities, not newly recomputed fingerprints.
+Input: pubchem_only_predictions_with_ad_achiral.csv
+SHA256: 0544b66eab7affc703f09572fbc558f9b64d99bc3e7894b466c8a4599aca0035
+Predictions match the original external bagging file by canonical SMILES (absolute tolerance 1e-12).
+Units: R2 dimensionless; RMSE and MAE in -log10(LD50 in mol/kg).
+
+                            subset    n       R2     RMSE      MAE  median_fold_error  within_2_fold_percent  within_5_fold_percent  within_10_fold_percent  observed_y_std_ddof0        SSE
+                  All PubChem-only 1068 0.744008 0.470260 0.244540           1.203570              78.183521              89.794007               94.382022              0.929447 236.181824
+Achiral ECFP4 max similarity = 1.0  641 0.979434 0.129952 0.070896           1.107455              97.191888              99.687988               99.843994              0.906173  10.824825
+Achiral ECFP4 max similarity < 1.0  427 0.428961 0.726477 0.505209           2.014762              49.648712              74.941452               86.182670              0.961366 225.356999
+      0.70 <= max similarity < 1.0   92 0.526848 0.680469 0.461182           1.691261              57.608696              75.000000               86.956522              0.989254  42.599511
+             max similarity < 0.70  335 0.388391 0.738610 0.517301           2.168309              47.462687              74.925373               85.970149              0.944448 182.757488
+
+
+STRUCTURAL-IDENTITY CHECK
+{
+  "RDKit_version": "2025.09.4",
+  "scope": "Structure-string audit on saved standardized SMILES; RemoveStereochemistry then canonical SMILES with isomericSmiles=True to retain isotopes. Does not establish original measurement independence.",
+  "train_n": 34511,
+  "test_n": 1068,
+  "raw_canonical_smiles_overlap": 0,
+  "recanonicalized_isomeric_overlap": 0,
+  "stereo_removed_structure_overlap": 637,
+  "sim_1_count": 641,
+  "sim_1_stereo_removed_matches": 637,
+  "sim_lt_1_stereo_removed_matches": 0,
+  "matched_pairs_dose_ratio_le_1p01": 481
+}
+
+Interpretation limits: The remaining 427 compounds are non-identical under the saved achiral ECFP4 fingerprints, not necessarily novel scaffolds.
+This is a post hoc analysis of stored predictions, not a new independent validation.
+No new models, OOF threshold ablations, clustered/scaffold cross-validation, or original-record label verification have been completed in this audit.

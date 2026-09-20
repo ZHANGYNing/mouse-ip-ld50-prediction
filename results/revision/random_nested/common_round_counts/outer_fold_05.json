@@ -1,0 +1,11 @@
+{
+  "inner_pilot_best_rounds": [
+    5637,
+    5146,
+    4588,
+    5449,
+    4630
+  ],
+  "final_num_boost_round": 5146,
+  "policy": "median_inner_pilot_best_rounds_common_to_all_arms"
+}
