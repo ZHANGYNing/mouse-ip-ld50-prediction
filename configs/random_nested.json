@@ -1,0 +1,52 @@
+{
+  "input_csv": "data/oof/train_pool_oof_residual_report.csv",
+  "historical_summary_json": "results/source_holdout/original_run_summary.json",
+  "output_directory": "results/generated/revision/random_nested",
+  "expected_development_n": 34959,
+  "outer_folds": 5,
+  "inner_folds": 5,
+  "split_seed": 42,
+  "screening_seed": 42,
+  "model_seeds": [
+    42
+  ],
+  "thresholds": [
+    10.0,
+    20.0,
+    30.0
+  ],
+  "max_boost_rounds": 7000,
+  "early_stopping_rounds": 250,
+  "pilot_validation_fraction": 0.1,
+  "final_rounds_policy": "median_inner_pilot_best_rounds_common_to_all_arms",
+  "device": "cuda",
+  "nthread": 8,
+  "verbose_eval": 500,
+  "save_models": false,
+  "fingerprint_radius": 2,
+  "fingerprint_size": 2048,
+  "include_chirality": false,
+  "count_log1p": true,
+  "descriptor_names_file": "rdkit2d_descriptor_names.json",
+  "representation_note": "ECFP4 count/log1p and ordered runtime RDKit descriptors; median imputation and zero-variance filtering fitted within the relevant training partition. See the archived random run manifest for its recorded dependency versions.",
+  "scaffold_policy": "MurckoScaffoldSmiles(includeChirality=False); all empty/acyclic scaffolds stay in one group",
+  "xgboost_params": {
+    "objective": "reg:squarederror",
+    "eval_metric": "rmse",
+    "tree_method": "hist",
+    "max_depth": 9,
+    "eta": 0.02,
+    "subsample": 0.75,
+    "colsample_bytree": 0.85,
+    "min_child_weight": 2,
+    "gamma": 0.01,
+    "lambda": 0.5,
+    "alpha": 0,
+    "max_bin": 256
+  },
+  "descriptor_policy": "runtime_descList",
+  "expected_raw_feature_dim": 2265,
+  "matrix_type": "DMatrix",
+  "screening_seed_policy": "base_plus_inner_fold_index",
+  "original_source_sha256": "c3d74e91097a933ccc760fec3cd76b5e0e357357844708e25f2514ed290baa15"
+}

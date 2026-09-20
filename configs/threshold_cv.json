@@ -1,0 +1,44 @@
+{
+  "input_report": "../data/oof/train_pool_oof_residual_report.csv",
+  "output_folder": "../results/generated/revision/threshold",
+  "thresholds_fold": [
+    null,
+    5,
+    10,
+    20,
+    30
+  ],
+  "cv_folds": 5,
+  "split_seed": 42,
+  "model_seed_base": 42,
+  "expected_development_n": 34959,
+  "expected_source_counts": {
+    "TOXRIC_only": 31944,
+    "mixed": 3015
+  },
+  "expected_removed_counts": {
+    "5": 2509,
+    "10": 976,
+    "20": 448,
+    "30": 290
+  },
+  "expected_raw_feature_dim": 2265,
+  "max_boost_rounds": 7000,
+  "early_stopping_rounds": 250,
+  "save_models": false,
+  "xgboost_params": {
+    "objective": "reg:squarederror",
+    "eval_metric": "rmse",
+    "tree_method": "hist",
+    "max_depth": 9,
+    "eta": 0.02,
+    "subsample": 0.75,
+    "colsample_bytree": 0.85,
+    "min_child_weight": 2,
+    "gamma": 0.01,
+    "lambda": 0.5,
+    "alpha": 0,
+    "max_bin": 256,
+    "device": "cuda"
+  }
+}
